@@ -32,5 +32,14 @@
         "psr-4": {
             "Btba\\ChatBundle\\": "src/"
         }
+    },
+
+    "autoload-dev": {
+        "psr-4": {
+            "Btba\\ChatBundle\\Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "symfony/phpunit-bridge": "^5.0"
     }
 }
