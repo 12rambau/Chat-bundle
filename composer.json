@@ -1,6 +1,33 @@
 {
+    "name": "btba/chat-bundle",
+    "type": "symfony-bundle",
+    "description": "Chat generator for Symfony applications",
+    "keywords": ["chat", "generator"],
+    "homepage": "https://github.com/12rambau/Chat-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Project Contributors",
+            "homepage": "https://github.com/12rambau/Chat-bundle/master/CONTRIBUTORS.md"
+        }
+    ],
+
     "require": {
+        "php": "^7.1.3",
         "symfony/webpack-encore-bundle": "^1.7",
-        "symfony/yaml": "^4.4"
+        "symfony/yaml": "^4.4",
+        "symfony/dependency-injection": "^4.2|^5.0",
+        "symfony/form": "^4.2|^5.0",
+        "symfony/http-kernel": "^4.3.7|^5.0",
+        "symfony/translation": "^4.2|^5.0",
+        "symfony/twig-bridge": "^4.2|^5.0",
+        "symfony/twig-bundle": "^4.2|^5.0",
+        "twig/twig": "^2.11.3|^3.0"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "btba\\ChatBundle\\": "src/"
+        }
     }
 }
