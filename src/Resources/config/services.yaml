@@ -1,14 +1,16 @@
-
-
 services:
     _defaults:
-        autowire: true 
         bind:
             $message_class: '%btba_chat.message_class%'
 
-    chat.type:
+    btba_chat.type:
         class: Btba\ChatBundle\Form\ChatMessageType
         tags:
             - {name: form.type }
         arguments:
             $trans: "@translator"
+
+    #btba_chat.controller:
+    Btba\ChatBundle\Controller\ChatController:
+        class: Btba\ChatBundle\Controller\ChatController
+        tags: ['controller.service_arguments']

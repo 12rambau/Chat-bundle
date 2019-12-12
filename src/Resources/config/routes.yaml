@@ -1,6 +1,6 @@
 btba_chat-add:
     path: /add
-    controller: App\Controller\ChatController::add
+    controller: Btba\ChatBundle\Controller\ChatController::add
     options:
         expose: true
 

@@ -12,6 +12,12 @@ use Liip\ImagineBundle\Imagine\Cache\CacheManager;
 
 class ChatController extends AbstractController
 {
+    private $message_class;
+
+    public function __construct($message_class){
+        $this->message_class = $message_class;
+    }
+
     public function add(Request $request, UploaderHelper $helper, CacheManager $cm): JsonResponse
     {
 
@@ -37,7 +43,7 @@ class ChatController extends AbstractController
         $data['content'] = $message->getContent();
         $data['username'] = $message->getAuthor()->getUsername();
         $data['date'] = date_format($message->getDate(), 'd/m h:i');
-        $data['profilePicUrl'] = $cm->getBrowserPath($helper->asset($message->getAuthor()->getProfilePic(), 'imageFile'), 'userNavbar');
+        //$data['profilePicUrl'] = $cm->getBrowserPath($helper->asset($message->getAuthor()->getProfilePic(), 'imageFile'), 'userNavbar');
 
 
         return new JsonResponse($data);

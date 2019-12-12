@@ -3,12 +3,12 @@ var Encore = require('@symfony/webpack-encore');
 Encore
     .setOutputPath('./src/Resources/public/')
     .setPublicPath('./')
-    //.setManifestKeyPrefix('bundles/btba_chat')
+    .setManifestKeyPrefix('bundles/btba_chat')
 
     /*
      * ENTRY CONFIG
      */
-    .addEntry('btba_chat', './assets/js/app.js')
+    .addEntry('btba_chat', './assets/js/chat.js')
 
     // will require an extra script tag for runtime.js
     .enableSingleRuntimeChunk()

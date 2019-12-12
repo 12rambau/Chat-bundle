@@ -1,0 +1,13 @@
+{
+  "entrypoints": {
+    "btba_chat": {
+      "js": [
+        "./runtime.js",
+        "./btba_chat.js"
+      ],
+      "css": [
+        "./btba_chat.css"
+      ]
+    }
+  }
+}

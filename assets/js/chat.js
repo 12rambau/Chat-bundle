@@ -3,22 +3,12 @@ import '../css/chat.css';
 
 import $ from 'jquery';
 
-//functions for the chat window management 
-$(document).ready(function(){
-    $("#chevron").click(function(e) {
-        changeChevron(e.target);
-    });
-    
-    $("#chat-submit").click(function() {
-        submitChat(e);
-    });
-});
-
 /**
  * scroll to the bottom of the chat room
  */
 function scrollToBottom() {
-    messages = $("#chatwindow");
+    // TODO wait for the end of bootstrap event
+    var messages = $("#chatwindow");
     messages.scrollTop(messages[0].scrollHeight);
 }
 
@@ -26,9 +16,9 @@ function scrollToBottom() {
  * 
  * @param {element} e the span chevron element
  */
-function changeChevron(e) {
-    e.classList.toggle('fa-chevron-up');
-    e.classList.toggle('fa-chevron-down');
+export function changeChevron(e) {
+    $(e).toggleClass('fa-chevron-up');
+    $(e).toggleClass('fa-chevron-down');
     scrollToBottom();
 }
 
@@ -36,7 +26,8 @@ function changeChevron(e) {
  * 
  * @param {event} e the click on the submit button
  */
-function submitChat(e) {
+export function submitChat(e) {
+
     e.preventDefault();
 
     var form = $("form[name='chat_message']");
@@ -53,7 +44,7 @@ function submitChat(e) {
 
     // the actual ajax request
     $.ajax({
-        url: Routing.generate('chat-add'),
+        url: Routing.generate('btba_chat-add'),
         type: 'POST',
         dataType: 'json',
         data: form_data,
