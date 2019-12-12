@@ -1,6 +1,6 @@
 <?php
 
-namespace btba\ChatBundle\Query;
+namespace Btba\ChatBundle\Query;
 
 trait MessageQuery
 {

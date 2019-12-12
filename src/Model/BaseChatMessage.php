@@ -1,10 +1,6 @@
 <?php
 
-namespace btba\ChatBundle\Model;
-
-use Doctrine\ORM\Mapping as ORM;
-use btba\ChatBundle\Model\BaseAuthor;
-
+namespace Btba\ChatBundle\Model;
 
 class BaseChatMessage
 {

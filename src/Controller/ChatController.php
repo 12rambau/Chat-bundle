@@ -1,10 +1,10 @@
 <?php
 
-namespace btba\ChatBundle\Controller;
+namespace Btba\ChatBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use btba\ChatBundle\Form\ChatMessageType;
+use Btba\ChatBundle\Form\ChatMessageType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Vich\UploaderBundle\Templating\Helper\UploaderHelper;

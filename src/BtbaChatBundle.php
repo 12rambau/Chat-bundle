@@ -1,6 +1,6 @@
 <?php
 
-namespace btba\ChatBundle;
+namespace Btba\ChatBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

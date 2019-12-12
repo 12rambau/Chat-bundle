@@ -1,6 +1,6 @@
 <?php
 
-namespace btba\ChatBundle\Model;
+namespace Btba\ChatBundle\Model;
 
 class BaseAuthor
 {

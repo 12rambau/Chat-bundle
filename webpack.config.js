@@ -3,7 +3,7 @@ var Encore = require('@symfony/webpack-encore');
 Encore
     .setOutputPath('./src/Resources/public/')
     .setPublicPath('./')
-    .setManifestKeyPrefix('bundles/btba_chat')
+    //.setManifestKeyPrefix('bundles/btba_chat')
 
     /*
      * ENTRY CONFIG

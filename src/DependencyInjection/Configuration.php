@@ -1,6 +1,6 @@
 <?php
 
-namespace btba\ChatBundle\DependencyInjection;
+namespace Btba\ChatBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

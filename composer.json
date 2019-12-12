@@ -15,7 +15,7 @@
     "require": {
         "php": "^7.1.3",
         "symfony/webpack-encore-bundle": "^1.7",
-        "symfony/yaml": "^4.4",
+        "symfony/yaml": "^4.0",
         "symfony/dependency-injection": "^4.2|^5.0",
         "symfony/form": "^4.2|^5.0",
         "symfony/http-kernel": "^4.3.7|^5.0",
@@ -27,7 +27,7 @@
 
     "autoload": {
         "psr-4": {
-            "btba\\ChatBundle\\": "src/"
+            "Btba\\ChatBundle\\": "src/"
         }
     }
 }
