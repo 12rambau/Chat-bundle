@@ -23,8 +23,12 @@
     <filter>
         <whitelist>
             <directory>./src</directory>
+            <exclude>
+                <directory>./vendor</directory>
+            </exclude>
         </whitelist>
     </filter>
+
     <logging>
         <!-- and this is where your report will be written -->
         <log type="coverage-clover" target="./clover.xml"/>
