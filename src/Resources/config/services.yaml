@@ -14,3 +14,6 @@ services:
     btba_chat.controller:
         class: Btba\ChatBundle\Controller\ChatController
         tags: ['controller.service_arguments']
+
+    Btba\ChatBundle\Controller\ChatController:
+        alias: btba_chat.controller
