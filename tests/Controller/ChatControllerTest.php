@@ -14,6 +14,10 @@ use Symfony\Component\Routing\RouteCollectionBuilder;
 
 class ChatControllerTest extends TestCase
 { 
+
+    //TODO be careful with the /cache/ directory 
+
+    
    /* public function testTest()
     {
         $kernel = new BtbaChatTestingKernel([
