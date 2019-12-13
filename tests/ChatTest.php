@@ -6,6 +6,7 @@ use Btba\ChatBundle\BtbaChatBundle;
 use Btba\ChatBundle\Controller\ChatController;
 use Btba\ChatBundle\Form\ChatMessageType;
 use PHPUnit\Framework\TestCase;
+use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Kernel;
@@ -18,22 +19,19 @@ class ChatTest extends TestCase
         //empty the cache 
         $dir = __DIR__ . '/cache/';
 
+        if (!is_dir($dir))
+            return;
+
         foreach (new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($dir, \FilesystemIterator::SKIP_DOTS), \RecursiveIteratorIterator::CHILD_FIRST) as $path)
             $path->isDir() && !$path->isLink() ? rmdir($path->getPathname()) : unlink($path->getPathname());
     }
+    
     public function test()
     {
         $this->assertEquals(0, 0);
     }
 
-    /*public function testServiceWiring()
-    {
-        $kernel = new BtbaChatTestingKernel();
-        $kernel->boot();
-        $container = $kernel->getContainer();
-
-    }*/
-    public function testServiceWiringWithConfiguration()
+    /*public function testServiceWiringWithConfiguration()
     {
 
 
@@ -51,7 +49,7 @@ class ChatTest extends TestCase
 
         $controller = $container->get('btba_chat.controller');
         $this->assertInstanceOf(ChatController::class, $controller);
-    }
+    }*/
 }
 
 class BtbaChatTestingKernel extends Kernel
@@ -67,11 +65,24 @@ class BtbaChatTestingKernel extends Kernel
     public function registerBundles()
     {
         return [
-            new BtbaChatBundle()
+            new BtbaChatBundle(),
+            new FrameworkBundle(),
         ];
     }
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
+        $loader->load(function (ContainerBuilder $container) {
+            $container->loadFromExtension('btba_chat', $this->btbaChatConfig);
+        });
+    }
+
+    protected function configureContainer(ContainerBuilder $c, LoaderInterface $loader)
+    { 
+        $c->loadFromExtension('framework', [
+            'secret' => 'F00',
+            'translator' => ['enabled' => true]
+        ]);
+
         $loader->load(function (ContainerBuilder $container) {
             $container->loadFromExtension('btba_chat', $this->btbaChatConfig);
         });
