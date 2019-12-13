@@ -17,6 +17,7 @@ class ChatControllerTest extends TestCase
 
     //TODO be careful with the /cache/ directory 
 
+    //test if the wehook work 
     
    /* public function testTest()
     {
