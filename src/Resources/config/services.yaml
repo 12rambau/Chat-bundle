@@ -2,6 +2,7 @@ services:
     _defaults:
         bind:
             $message_class: '%btba_chat.message_class%'
+        public: true
 
     btba_chat.type:
         class: Btba\ChatBundle\Form\ChatMessageType
