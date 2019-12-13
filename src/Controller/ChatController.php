@@ -43,7 +43,7 @@ class ChatController extends AbstractController
         $data['content'] = $message->getContent();
         $data['username'] = $message->getAuthor()->getUsername();
         $data['date'] = date_format($message->getDate(), 'd/m h:i');
-        //$data['profilePicUrl'] = $cm->getBrowserPath($helper->asset($message->getAuthor()->getProfilePic(), 'imageFile'), 'userNavbar');
+        $data['profilePicUrl'] = $cm->getBrowserPath($helper->asset($message->getAuthor()->getProfilePic(), 'imageFile'), 'userNavbar');
 
 
         return new JsonResponse($data);

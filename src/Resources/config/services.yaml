@@ -10,7 +10,6 @@ services:
         arguments:
             $trans: "@translator"
 
-    #btba_chat.controller:
-    Btba\ChatBundle\Controller\ChatController:
+    btba_chat.controller:
         class: Btba\ChatBundle\Controller\ChatController
         tags: ['controller.service_arguments']
