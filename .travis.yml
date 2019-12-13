@@ -26,6 +26,15 @@ install:
     - composer update $COMPOSER_FLAGS --no-interaction
     - phpenv global 7.2; ./vendor/bin/simple-phpunit install; phpenv global $TRAVIS_PHP_VERSION
 
+before_script:
+    - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+    - chmod +x ./cc-test-reporter
+    - ./cc-test-reporter before-build
+
 script:
     - composer validate --strict --no-check-lock
     - ./vendor/bin/simple-phpunit $PHPUNIT_FLAGS
+    - bundle exec rspec
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
